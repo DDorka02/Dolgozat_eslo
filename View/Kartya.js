@@ -2,16 +2,16 @@ export default class Kartya {
   #szuloelem;
   #index;
   #divElem;
-  constructor(index, szuloelem) {
+  constructor(elem, index, szuloelem) {
     this.#index = index;
     this.#szuloelem = szuloelem;
     this.megjelenit();
-    this.#divElem = $("div:last");
+    this.#divElem = $(".kartya:last");
     this.esemenykezelo();
   }
 
   megjelenit() {
-    $(this.#szuloelem).append(`<div class="kartya"> p </div>`);
+    $(this.#szuloelem).append(`<div class="kartya"> </div>`);
   }
 
   esemenykezelo() {

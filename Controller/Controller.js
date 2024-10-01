@@ -12,6 +12,9 @@ export default class Controller{
     }
 
     esemeny(){
-       
+        $(window).on("kapcsolas", (event) => {
+            let emoji = this.Jatekter.setSzoveg();
+            new Jatekter(this.lista, this.taroloElem);
+          });
     }
 }

@@ -1,5 +1,11 @@
-div{
-    display: grid;
-    grid-template-columns: 5 repeat(1fr);
+.kartya{
+    height: 20px;
+    background: red;
+    border: 1px solid black;
+}
 
+.jatekter{
+    display: grid;
+    gap:10px;
+    
 }
