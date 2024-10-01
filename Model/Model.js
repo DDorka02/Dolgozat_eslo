@@ -1,29 +1,26 @@
 import Jatekter from "../View/Jatekter.js";
 
 export default class Model {
-  #lista= ["sz", "ö","ö","ö","ö","ö","ö","ö","ö","ö","sz", "sz","sz", "sz","sz", "sz", "sz","sz", "sz","sz" ];
-  #index= 0;
-  constructor(index) {
-    this.#index = index;
-    this.ell();
+  #lista= [];
+
+  constructor() {
+    this.megjelenit()
+  }
+  megjelenit(){
+    for (let i = 0; i < 20; i++) {
+      if (Math.random() < 0.3) {
+        this.#lista.push("😈");
+      } else {
+        this.#lista.push("👻");
+      }
+    }
   }
 
   getLista() {
     return this.#lista;
-    
   }
 
-  katt() {
-    $(window).on("kattintas", (event) => {
-      let index = event.detail;
-      this.esemeny(index);
-      new Jatekter(this.#lista);
-    });
+  ell(index) {
+    return this.#lista[index] === "😈" ? "Elvitt az ördög!" : "Megmentettek a jó lelkek!";
   }
-
-  esemeny(index) {
-    this.#lista[index] = !this.#lista[index]     
-  }
-
-  ell() {}
 }
